@@ -2,7 +2,7 @@ import RestaurantsDAO from "../dao/restaurantsDAO.js";
 
 export default class  RestaurantsController {
       static async apiGetRestaurants(req,res,next){
-            // if the queary inside the params oif url exist convert to integer
+            // if the query inside the params oif url exist convert to integer
             const restaurantsPerPage = req.query.restaurantsPerPage ? parseInt(req.query.restaurantsPerPage,10):25
             const page = req.query.page ? parseInt(req.query.page,10):0
 

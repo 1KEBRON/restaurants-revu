@@ -1,5 +1,5 @@
 import e from 'express'
-import ReviewsDAO from '../dao/reviewDAO.js'
+import ReviewsDAO from '../dao/reviewsDAO.js'
 
 export default class ReviewController {
       static async apiPostReview(req,res,next) {
