@@ -40,17 +40,18 @@ export default class ReviewController {
                   if (error){
                         res.status(400).json({error})
                   }
-
-            } catch (error) {
-               res.status(400).json({error: error.message})
-
-            }
-
-            if(reviewResponse.modifiedCount === 0){
+                  if(reviewResponse.modifiedCount === 0){
                   throw new Error(
                         "Unable to update the review - You/user may not be the original poster  "
                   )
             }
+            res.json({status:'success'})
+            } catch (err) {
+               res.status(500).json({error: err.message})
+
+            }
+
+            
       }
 
       static async apiDeleteReview(req,res,next) {
