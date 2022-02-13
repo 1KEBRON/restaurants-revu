@@ -54,4 +54,58 @@ export default class RestaurantsDAO {
 
             }
       }
+      static async getRestaurantByID(id){
+            try {
+                  const pipeline = [
+                        {
+                              $match:{
+                                    _id: new ObjectId(id)
+                              },
+                        },
+                        {
+                              $lookup:{
+                                    from:'reviews',
+                                    let:{
+                                          id:'$_id',
+                                    },
+                                    pipeline : [
+                                          {
+                                                $match : {
+                                                      $expr: {
+                                                            $eq: ['$restaurant_id','$id'],
+                                                      },
+                                                },
+                                          },
+                                          {
+                                                $sort:{
+                                                      date:-1,
+                                                },
+                                          },
+                                    ],
+                                    as : 'reviews',
+                              },
+                        },
+                        {
+                              $addFields:{
+                                    reviews:'$reviews',
+                              },
+                        },
+                  ]
+                   return await restaurants.aggregate(pipeline).next()
+
+            } catch (err) {
+                  console.error(`something wrong in getRestaurantByID: ${err}`);
+                  throw err
+            }
+      }
+      static async getCuisines(){
+            let cuisines = []
+            try {
+                  cuisines = restaurants.distinct('cuisine')
+                  return cuisines
+            } catch (err) {
+                  console.error(`Unable to get Cuisines, ${err}`);
+                  return cuisines
+            }
+      }
 }

@@ -4,9 +4,11 @@ import ReviewCtr from './reviews.controller.js'
 
 const router = express.Router()
 router.route('/').get(RestaurantsCtr.apiGetRestaurants)
+router.route('/id/:id').get(RestaurantsCtr.apiGetRestaurantsById)
+router.route('/cuisines').get(RestaurantsCtr.apiGetRestaurantsByCuisine)
 
 router
-.route('/Review')
+.route('/review')
 .post(ReviewCtr.apiPostReview)
 .put(ReviewCtr.apiUpdateReview)
 .delete(ReviewCtr.apiDeleteReview)
