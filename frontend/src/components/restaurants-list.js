@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 function RestaurantsList (){
       return (
             <div className='App'>
-            HELLO WRLD
+            <h1>RestaurantsList</h1>
             </div>
       )
 }

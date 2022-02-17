@@ -2,12 +2,12 @@ import React from 'react'
 import {Switch,Route,Link} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-function Restaurants (){
+function Restaurant (){
       return (
             <div className='App'>
-            HELLO WRLD
+            <h1>Restaurant</h1>
             </div>
       )
 }
 
-export default Restaurants
+export default Restaurant
