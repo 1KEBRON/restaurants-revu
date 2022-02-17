@@ -22,7 +22,7 @@ function App (){
             <div>
             <nav className='navbar navbar-expand navbar-dark bg-dark'> 
              <a href='/restaurants' className='navbar-brand'>
-                   Restaurants Reviews
+                   Restaurants Revu
              </a>
              <div className='navbar-nav mr-auto'>
              <li className='navbar-item'>
