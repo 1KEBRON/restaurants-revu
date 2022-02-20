@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
-import restaurant from '../services/restaurant';
 import RestaurantDataService from '../services/restaurant';
 
 const RestaurantsList = (props) => {
@@ -76,7 +75,7 @@ const RestaurantsList = (props) => {
       };
 
       const findByCuisine = () =>{
-            if(searchCuisine == 'All cuisines'){
+            if(searchCuisine === 'All cuisines'){
                   refreshList();
             }else{
                   find(searchCuisine,'cuisine')
@@ -156,9 +155,9 @@ const RestaurantsList = (props) => {
                                                   <strong>Address: </strong>{address}
                                             </p>                         
                                             <div className='row'>
-                                                <Link to={'/restaurants/'+restaurant._id} className='btn btn-primary col-lg-5 mx-1 mb-1'>
-                                                View Reviews
-                                                </Link>
+                                                    <Link to={"/restaurants/"+restaurant._id} className="btn btn-primary col-lg-5 mx-1 mb-1">
+                                                      View Reviews
+                                                   </Link>
                                                 <a target={'_blank' } href={'https://www.google.com/maps/place/'+ address} className='btn btn-primary col-lg-5 mx-1 mb-1'>View Map</a>
                                             </div>
                                       </div>

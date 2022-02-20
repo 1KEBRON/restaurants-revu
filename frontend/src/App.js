@@ -22,7 +22,7 @@ function App (){
             <div>
             <nav className='navbar navbar-expand navbar-dark bg-dark'> 
              <a href='/restaurants' className='navbar-brand'>
-                   Restaurants Revu
+                  Restaurant Revu
              </a>
              <div className='navbar-nav mr-auto'>
              <li className='navbar-item'>
@@ -63,7 +63,7 @@ function App (){
               <Route
                     path='/login'
                     render={(props)=>(
-                          <Login {...props} login={user}/>
+                          <Login {...props} login={login}/>
                     )}
               />
               </Switch>

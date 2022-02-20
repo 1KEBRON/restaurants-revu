@@ -1,8 +1,8 @@
 import React from 'react'
-import {Switch,Route,Link} from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import RestaurantDataService from '../services/restaurant'
+import {Link} from 'react-router-dom'
 
-function AddReview (){
+const AddReview (){
       return (
             <div className='App'>
             HELLO WRLD
